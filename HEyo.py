@@ -51,7 +51,7 @@ def plot_grades(arr):
     st.pyplot(plt)
 
 # Main Streamlit app
-st.title("Grade Analysis from PDF")
+st.title("Grade Analysis")
 
 pdf_url = "https://drive.google.com/uc?id=1uiPP4xEuTpyqPlKfgOZbhSk3DIbBRGLi&export=download"
 reader = download_and_read_pdf(pdf_url)
