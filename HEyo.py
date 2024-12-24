@@ -48,7 +48,7 @@ from pypdf import PdfReader
 
 reader=PdfReader("downloaded_file.pdf")
 
-print(len(reader.pages))
+# print(len(reader.pages))
 
 
 # In[12]:
