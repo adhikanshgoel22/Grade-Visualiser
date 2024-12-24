@@ -28,7 +28,7 @@ def process_pdf(reader):
             parts = line.split(" ")
             if len(parts) < 3:
                 continue
-            grades.append(parts[1] + "" + parts[2])
+            grades.append(parts[1] + parts[2])
             for j in range(3, len(parts) - 3):
                 if len(parts[j]) == 0:
                     grades.append(0)
