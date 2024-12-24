@@ -206,9 +206,9 @@ for i in range(6, len(reader.pages)):
 # In[19]:
 
 
-import matplotlib.pyplot as plt
 
-hehe=input("type")
+import matplotlib.pyplot as plt
+hehe=st.text_input("type")
 for i in papa:
     if len(i)>=1:
         if i[0]==hehe:
