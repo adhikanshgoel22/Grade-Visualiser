@@ -11,7 +11,6 @@ import pandas as pd
 # get_ipython().system('pip install pypdf')
 # pip install pypdf
 
-# In[8]:
 
 
 import requests
@@ -199,9 +198,9 @@ for i in range(6, len(reader.pages)):
         papa.append(grades)
 
 # Print the result
-print("Parsed Data:")
-for entry in papa:
-    print(entry)
+# print("Parsed Data:")
+# for entry in papa:
+#     print(entry)
 
 
 # In[19]:
