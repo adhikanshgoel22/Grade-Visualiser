@@ -57,7 +57,7 @@ pdf_url = "https://drive.google.com/uc?id=1uiPP4xEuTpyqPlKfgOZbhSk3DIbBRGLi&expo
 reader = download_and_read_pdf(pdf_url)
 if reader:
     papa = process_pdf(reader)
-    hehe = st.text_input("Enter student name:")
+    hehe = st.text_input("Enter Course Code:")
     
     if hehe:
         arr = []
@@ -70,7 +70,7 @@ if reader:
                     stri += papa[i - 1][j] + " "
         if arr:
             st.write(f"Grades for {stri.strip()}:")
-            st.write(arr)
+            # st.write(arr)
             plot_grades(arr)
         else:
             st.error("Student not found.")
