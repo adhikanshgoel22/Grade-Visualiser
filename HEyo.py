@@ -73,7 +73,7 @@ def calculate_grades(arr):
     return gra[indi], sum1
 
 # Main Streamlit app
-st.title("Grade Analysis from PDF")
+st.title("Grade Analysis")
 
 # PDF URL
 pdf_url = "https://drive.google.com/uc?id=1uiPP4xEuTpyqPlKfgOZbhSk3DIbBRGLi&export=download"
