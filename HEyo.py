@@ -28,7 +28,8 @@ def process_pdf(reader):
             parts = line.split(" ")
             if len(parts) < 3:
                 continue
-            grades.append(parts[1] + parts[2])
+            # Normalize course codes by removing spaces
+            grades.append((parts[1] + parts[2]).replace(" ", ""))
             for j in range(3, len(parts) - 3):
                 if len(parts[j]) == 0:
                     grades.append(0)
@@ -63,7 +64,7 @@ def calculate_grades(arr):
     aver = np.ceil(sum1 / 2)
 
     medd = 0
-    gra = [10,9,7,6,5,4]
+    gra = [10, 9, 7, 6, 5, 4]
     for i in arr1:
         if i >= aver:
             medd = i
@@ -80,20 +81,19 @@ pdf_url = "https://drive.google.com/uc?id=1uiPP4xEuTpyqPlKfgOZbhSk3DIbBRGLi&expo
 reader = download_and_read_pdf(pdf_url)
 if reader:
     papa = process_pdf(reader)
-    hehe = st.text_input("Enter Course Code:")
-    
+    hehe = st.text_input("Enter Course Code:").replace(" ", "").upper()  # Normalize input
+
     if hehe:
         arr = []
         stri = ""
         for i in range(1, len(papa)):
-            if len(papa[i]) >= 1 and papa[i][0] == hehe:
+            if len(papa[i]) >= 1 and papa[i][0].replace(" ", "").upper() == hehe:  # Normalize course codes in data
                 for num in range(1, 15):
                     arr.append(papa[i][num])
                 for j in range(len(papa[i - 1])):
                     stri += papa[i - 1][j] + " "
         if arr:
             st.write(f"Grades for {stri.strip()}:")
-            # st.write(arr)
             plot_grades(arr)
             
             # Calculate average and median grade
@@ -101,4 +101,4 @@ if reader:
             st.write(f"Grade given to >=50% of the batch: {avg_grade}")
             st.write(f"Total number of students: {total_students}")
         else:
-            st.error("Student not found.")
+            st.error("Course not found.")
