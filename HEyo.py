@@ -3,13 +3,13 @@
 
 # In[7]:
 
-
+import streamlit as st
 import numpy as np
 import pandas as pd
 # import matplotlib as mp
 
 # get_ipython().system('pip install pypdf')
-pip install pypdf
+# pip install pypdf
 
 # In[8]:
 
