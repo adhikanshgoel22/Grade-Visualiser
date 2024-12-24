@@ -6,7 +6,7 @@
 
 import numpy as np
 import pandas as pd
-import matplotlib as mp
+# import matplotlib as mp
 
 get_ipython().system('pip install pypdf')
 
