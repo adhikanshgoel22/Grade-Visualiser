@@ -64,7 +64,7 @@ def calculate_grades(arr):
     aver = np.ceil(sum1 / 2)
 
     medd = 0
-    gra = [10, 9, 7, 6, 5, 4]
+    gra = [10, 9, 8, 7, 6, 5, 4]
     for i in arr1:
         if i >= aver:
             medd = i
